@@ -63,14 +63,14 @@ public class MainActivityTest {
 
         // Subscribe to ProductListViewModel's products list observable to figure out when the
         // app is idle.
-        productListViewModel.getProducts().observeForever(new Observer<List<ProductEntity>>() {
-            @Override
-            public void onChanged(@Nullable List<ProductEntity> productEntities) {
-                if (productEntities != null) {
-                    idlingRes.setIdleNow(true);
-                }
-            }
-        });
+//        productListViewModel.getProducts().observeForever(new Observer<List<ProductEntity>>() {
+//            @Override
+//            public void onChanged(@Nullable List<ProductEntity> productEntities) {
+//                if (productEntities != null) {
+//                    idlingRes.setIdleNow(true);
+//                }
+//            }
+//        });
     }
 
     @Test
@@ -94,7 +94,7 @@ public class MainActivityTest {
         MainActivity activity = mActivityRule.getActivity();
 
         Fragment productListFragment = activity.getSupportFragmentManager()
-                .findFragmentByTag(ProductListFragment.TAG);
+                .findFragmentByTag(ProductListFragment.Companion.getTAG());
 
         return ViewModelProviders.of(productListFragment)
                 .get(ProductListViewModel.class);

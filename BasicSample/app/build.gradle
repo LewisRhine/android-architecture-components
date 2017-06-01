@@ -17,6 +17,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion 25
@@ -57,6 +58,8 @@ dependencies {
     compile 'android.arch.persistence.room:runtime:' + rootProject.archRoomVersion;
     annotationProcessor "android.arch.lifecycle:compiler:" + rootProject.archLifecycleVersion;
     annotationProcessor "android.arch.persistence.room:compiler:" + rootProject.archRoomVersion;
+    kapt "android.arch.lifecycle:compiler:" + rootProject.archLifecycleVersion;
+    kapt "android.arch.persistence.room:compiler:" + rootProject.archRoomVersion;
 
     testCompile 'junit:junit:4.12'
 
@@ -76,7 +79,9 @@ dependencies {
     androidTestCompile 'com.android.support:support-v4:' + rootProject.supportLibVersion;
     androidTestCompile 'com.android.support:recyclerview-v7:' + rootProject.supportLibVersion
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version";
+    kapt "com.android.databinding:compiler:$plugin_version"
 }
+
 repositories {
     mavenCentral()
 }

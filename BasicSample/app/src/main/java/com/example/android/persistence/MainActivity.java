@@ -33,7 +33,7 @@ public class MainActivity extends LifecycleActivity {
             ProductListFragment fragment = new ProductListFragment();
 
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, fragment, ProductListFragment.TAG).commit();
+                    .add(R.id.fragment_container, fragment, ProductListFragment.Companion.getTAG()).commit();
         }
     }
 

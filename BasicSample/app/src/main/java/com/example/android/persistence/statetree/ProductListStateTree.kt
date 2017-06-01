@@ -3,6 +3,8 @@ package com.example.android.persistence.statetree
 import com.example.android.persistence.model.Product
 
 sealed class ProductListStateTree {
+    class Init : ProductListStateTree()
+
     class Loading : ProductListStateTree()
 
     sealed class Done : ProductListStateTree() {
